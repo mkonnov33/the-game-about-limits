@@ -1,0 +1,7 @@
+res://scenes/game_controller.tscn
+res://scripts/game_controller.gd
+res://scripts/character_body_2d.gd
+res://scenes/grid/village.tscn
+res://scenes/grid/test_scene.tscn
+res://scenes/camera_2d.tscn
+res://scenes/player.tscn

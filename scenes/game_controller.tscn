@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://blao085q6bmv1"]
+
+[ext_resource type="Script" uid="uid://tc2ujiromykd" path="res://scripts/game_controller.gd" id="1_vq0e2"]
+[ext_resource type="PackedScene" uid="uid://divn8vuibmd8i" path="res://scenes/grid/village.tscn" id="2_ts4rt"]
+[ext_resource type="PackedScene" uid="uid://b2rl5fl5uk4r7" path="res://scenes/player.tscn" id="2_vc4nx"]
+[ext_resource type="PackedScene" uid="uid://daov5bhi1gryh" path="res://scenes/camera_2d.tscn" id="4_rc0pn"]
+
+[node name="GameController" type="Node" unique_id=519392865 node_paths=PackedStringArray("world_2D", "gui")]
+script = ExtResource("1_vq0e2")
+world_2D = NodePath("World2D")
+gui = NodePath("GUI")
+scene_grid = {
+Vector2(0, 0): ["village", "res://scenes/grid/village.tscn"],
+Vector2(0, 1): ["test_scene", "res://scenes/grid/test_scene.tscn"]
+}
+
+[node name="World2D" type="Node2D" parent="." unique_id=386371688]
+
+[node name="Village" parent="World2D" unique_id=335529191 instance=ExtResource("2_ts4rt")]
+
+[node name="Player" parent="World2D" unique_id=2056901022 instance=ExtResource("2_vc4nx")]
+top_level = true
+position = Vector2(8, -8)
+
+[node name="Camera2D" parent="World2D" unique_id=124706035 instance=ExtResource("4_rc0pn")]
+zoom = Vector2(1.25, 1.25)
+
+[node name="GUI" type="Control" parent="." unique_id=1860608326]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

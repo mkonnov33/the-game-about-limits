@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c5jh1boa1jug7"]
+
+[ext_resource type="Script" uid="uid://dbekduujwghya" path="res://scripts/teleport.gd" id="1_pce0k"]
+[ext_resource type="Texture2D" uid="uid://bc6ho60bsapnh" path="res://sprites/icon.svg" id="1_vurns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q40aq"]
+
+[node name="Teleporter" type="Area2D" unique_id=443686324]
+script = ExtResource("1_pce0k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1051480761]
+shape = SubResource("RectangleShape2D_q40aq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=58827858]
+modulate = Color(0.1728327, 0.17283267, 0.17283267, 1)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("1_vurns")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
